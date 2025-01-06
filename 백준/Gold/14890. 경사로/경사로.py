@@ -7,31 +7,36 @@ guidance = []
 for _ in range(N):
     guidance.append(list(map(int, sys.stdin.readline().split())))
 
-cnt = 0
 visited = [[False] * N for _ in range(N)]
 
-for r in range(N):
+def isLineIsPassable(idx, isHorizontal):
+    line = []
+    if isHorizontal:
+        for i in range(N):
+            line.append(guidance[idx][i])
+    else:
+        for i in range(N):
+            line.append(guidance[i][idx])
+
+    visited = [False for _ in range(N)]
     now = 0
 
     while 1:
         if now == N - 1:
-            cnt += 1
-            break
-        if guidance[r][now] == guidance[r][now + 1]:
+            return True
+        if line[now] == line[now + 1]:
             now += 1
             continue
-        elif abs(guidance[r][now] - guidance[r][now + 1]) > 1:
-            break
+        elif abs(line[now] - line[now + 1]) > 1:
+            return False
         else:
-            if guidance[r][now] - guidance[r][now + 1] == 1:
-                flag = False
+            if line[now] - line[now + 1] == 1:
+                flag = True
 
                 for i in range(1, L + 1):
                     if 0 <= now + i < N:
-                        if not visited[r][now + i]:
-                            if guidance[r][now + 1] == guidance[r][now + i]:
-                                flag = True
-                            else:
+                        if not visited[now + i]:
+                            if line[now + 1] != line[now + i]:
                                 flag = False
                                 break
                         else:
@@ -43,19 +48,18 @@ for r in range(N):
                     
                 if flag:
                     for i in range(1, L + 1):
-                        visited[r][now + i] = True
+                        visited[now + i] = True
                     now += L
                 else:
-                    break
+                    return False
 
-            elif guidance[r][now] - guidance[r][now + 1] == -1:
-                flag = False
+            elif line[now] - line[now + 1] == -1:
+                flag = True
+
                 for i in range(0, L):
                     if 0 <= now - i < N:
-                        if not visited[r][now - i]:
-                            if guidance[r][now] == guidance[r][now - i]:
-                                flag = True
-                            else:
+                        if not visited[now - i]:
+                            if line[now] != line[now - i]:
                                 flag = False
                                 break
                         else:
@@ -67,73 +71,15 @@ for r in range(N):
                 
                 if flag:
                     for i in range(0, L):
-                        visited[r][now - i] = True
+                        visited[now - i] = True
                     now += 1
                 else:
-                    break
+                    return False
 
-visited = [[False for _ in range(N)] for _ in range(N)]
-for c in range(N):
-    now = 0
+cnt = 0
 
-    while 1:
-        if now == N - 1:
-            cnt += 1
-            break
-        if guidance[now][c] == guidance[now + 1][c]:
-            now += 1
-            continue
-        elif abs(guidance[now][c] - guidance[now + 1][c]) > 1:
-            break
-        else:
-            if guidance[now][c] - guidance[now + 1][c] == 1:
-                flag = False
-
-                for i in range(1, L + 1):
-                    if 0 <= now + i < N:
-                        if not visited[now + i][c]:
-                            if guidance[now + 1][c] == guidance[now + i][c]:
-                                flag = True
-                            else:
-                                flag = False
-                                break
-                        else:
-                            flag = False
-                            break
-                    else:
-                        flag = False
-                        break
-                    
-                if flag:
-                    for i in range(1, L + 1):
-                        visited[now + i][c] = True
-                    now += L
-                else:
-                    break
-
-            elif guidance[now][c] - guidance[now + 1][c] == -1:
-                flag = False
-                
-                for i in range(0, L):
-                    if 0 <= now - i < N:
-                        if not visited[now - i][c]:
-                            if guidance[now][c] == guidance[now - i][c]:
-                                flag = True
-                            else:
-                                flag = False
-                                break
-                        else:
-                            flag = False
-                            break
-                    else:
-                        flag = False
-                        break
-                
-                if flag:
-                    for i in range(0, L):
-                        visited[now - i][c] = True
-                    now += 1
-                else:
-                    break
+for i in range(N):
+    cnt += int(isLineIsPassable(i, True))
+    cnt += int(isLineIsPassable(i, False))
 
 print(cnt)
