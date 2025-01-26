@@ -12,7 +12,7 @@
 
 ### 제출 일자
 
-2025년 1월 6일 15:42:11
+2025년 1월 26일 12:12:42
 
 ### 문제 설명
 
@@ -23,8 +23,8 @@
 <table class="table">
 	<tbody>
 		<tr>
-			<td style="text-align:center"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/12094/1.png" style="height:250px; width:251px"></td>
-			<td style="text-align:center"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/12094/2.png" style="height:250px; width:246px"></td>
+			<td style="text-align:center"><img alt="" src="" style="height:250px; width:251px"></td>
+			<td style="text-align:center"><img alt="" src="" style="height:250px; width:246px"></td>
 			<td style="text-align:center"><img alt="" src="" style="height:250px; width:250px"></td>
 		</tr>
 	</tbody>
@@ -42,10 +42,10 @@
 <table class="table">
 	<tbody>
 		<tr>
-			<td style="text-align:center"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/12094/4.png" style="height:250px; width:247px"></td>
-			<td style="text-align:center"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/12094/5.png" style="height:250px; width:246px"></td>
-			<td style="text-align:center"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/12094/6.png" style="height:250px; width:247px"></td>
-			<td style="text-align:center"><img alt="" src="https://onlinejudgeimages.s3-ap-northeast-1.amazonaws.com/problem/12094/7.png" style="height:250px; width:250px"></td>
+			<td style="text-align:center"><img alt="" src="" style="height:250px; width:247px"></td>
+			<td style="text-align:center"><img alt="" src="" style="height:250px; width:246px"></td>
+			<td style="text-align:center"><img alt="" src="" style="height:250px; width:247px"></td>
+			<td style="text-align:center"><img alt="" src="" style="height:250px; width:250px"></td>
 		</tr>
 	</tbody>
 	<tfoot>
